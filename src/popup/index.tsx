@@ -2,6 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import "../assets/css/tailwind.css";
 import Popup from "./Popup";
+import { CompanyInfo } from "./CompanyInfo";
 
 function init() {
     const appContainer = document.createElement("div");
@@ -12,7 +13,15 @@ function init() {
     }
 
     const root = createRoot(appContainer);
-    root.render(<Popup />);
+    const companyInfo : CompanyInfo = {
+        name : "SAIC Motor",
+        action : "remains operational; plans to increase export",
+        yaleGrade : "f",
+        countryCode : "CN",
+        country : "China",
+        industry : "Industrials"
+    };
+    root.render(<Popup companyInfo={companyInfo}/>);
 }
 
 init()
